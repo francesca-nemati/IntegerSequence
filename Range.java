@@ -5,10 +5,10 @@ public class Range implements IntegerSequence{
   public Range(int start, int end) {
     this.start = start;
     this.end = end;
-    current = start+1;
+    current = start;
   }
   public void reset() {
-    current = start+1;
+    current = start;
   }
   public int length() {
     int len = (end - start) + 1;
@@ -21,7 +21,7 @@ public class Range implements IntegerSequence{
 
   //@throws NoSuchElementException
   public int next() {
-    if (hasNext() == false) throw NoSuchElementException;
+    if (hasNext() == false) throw new NoSuchElementException ("There is no next value");
     int curr = current;
     current++;
     return curr;
