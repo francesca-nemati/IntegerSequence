@@ -5,16 +5,19 @@ public class Range implements IntegerSequence{
   public Range(int start, int end) {
     this.start = start;
     this.end = end;
-    current = start;
+    current = start+1;
   }
   public void reset() {
-    current = start;
+    current = start+1;
   }
   public int length() {
     int len = (end - start) + 1;
     return len;
   }
-  public boolean hasNext() { }
+  public boolean hasNext() {
+    if (current <= end) return true;
+    else return false;
+  }
 
   //@throws NoSuchElementException
   public int next() { }
