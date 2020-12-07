@@ -4,8 +4,20 @@ public class ArraySequence implements IntegerSequence {
   int[] data;
 
   public ArraySequence(int[] other) {
-    data = other;
     currentIndex = 0;
+    data = new int[other.length];
+    for (int i = 0; i < other.length; i++) {
+      data[i] = other[i];
+    }
+  }
+
+  public ArraySequence(IntegerSequence otherseq) {
+    otherseq.reset();
+    data = new int[(otherseq.end - otherseq.start) + 1]; //idk about this
+    for (int i = 0; i < (otherseq.end - otherseq.start) + 1; i++) {
+      data[i] = otherseq.next();
+    }
+    otherseq.reset();
   }
 
   public void reset() {
