@@ -13,8 +13,8 @@ public class ArraySequence implements IntegerSequence {
 
   public ArraySequence(IntegerSequence otherseq) {
     otherseq.reset();
-    data = new int[(otherseq.end - otherseq.start) + 1]; //idk about this
-    for (int i = 0; i < (otherseq.end - otherseq.start) + 1; i++) {
+    data = new int[otherseq.length()]; //idk about this
+    for (int i = 0; i < otherseq.length(); i++) {
       data[i] = otherseq.next();
     }
     otherseq.reset();
