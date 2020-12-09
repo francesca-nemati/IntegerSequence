@@ -28,7 +28,7 @@ public class ArraySequence implements IntegerSequence {
     return len;
   }
   public boolean hasNext() {
-    if (currentIndex < length()-1) return true;
+    if (currentIndex < length()) return true;
     else return false;
   }
 
